@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkinstagram=self.webpackChunkinstagram||[]).push([[7],{8007:function(e,a,s){s.r(a),s.d(a,{default:function(){return i}});var n=s(3504),r=s(6901),t=s(184);function i(){return(0,t.jsxs)("div",{children:[(0,t.jsx)("h3",{className:"message",children:"Sorry, this page isn't available."}),(0,t.jsxs)("p",{className:"not-avail-p",children:["The link you followed may be broken, or the page may have been removed. ",(0,t.jsx)(n.rU,{className:"back",to:r.Sd,children:"Go back to Instagram."})," "]})]})}}}]);
+//# sourceMappingURL=7.78333648.chunk.js.map
