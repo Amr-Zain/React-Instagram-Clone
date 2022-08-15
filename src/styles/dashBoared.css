@@ -1,0 +1,247 @@
+root {
+    --white: #ffffff;
+    --blue-medium: #005c98;
+    --blue-light:  #0095f6;
+    --black-light: #262626;
+    --black-faded: #00000059;
+    --gray-base: #616161;
+    --gray-background: #fafafa;
+    --gray-primary: #dbdbdb;
+    --ig-primary-text: 38, 38, 38;
+    --ig-secondary-text: 142, 142, 142;
+}
+a {
+    text-decoration: none;
+}
+.main {
+    display: grid;
+    grid-template-columns: 470px 320px;
+    justify-content: center;
+    gap: 2rem;
+    margin: 6rem auto 2rem auto;
+    width: 100%;
+}
+.main .timeLine {
+    max-width: 470px;
+}
+
+.main .user {
+    margin-top: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr ;
+    gap: 1rem;
+    align-items: center;
+    margin: 0;
+}
+.main .user .profileimg {
+    cursor: pointer;
+}
+.main .user .profileimg img{
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.main .user .userinfo {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    text-align: left;
+}
+.main .user .userinfo .username {
+    font-size: 14px;
+    margin: 0;
+}
+.main .user .userinfo .fullname {
+    letter-spacing: .2px;    
+    font-size: 14px;
+    margin: 0;
+    color: rgb( 142, 142, 142);
+    text-transform: capitalize; 
+}
+
+
+
+
+.main .suggestedprofiles {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-content: left;
+    margin: 2rem auto 2rem 0;
+
+}
+.main .suggestedprofiles .Suggestions {
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb( 142, 142, 142);
+}
+.main .suggestedprofiles .suggestedprofile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+}
+.main .suggestedprofiles .suggestedprofile .info {
+    display: flex;
+    gap: 1rem;
+}
+.main .suggestedprofiles .suggestedprofile .profileimg {
+    cursor: pointer;
+}
+.main .suggestedprofiles .suggestedprofile .profileimg img{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.main .suggestedprofiles .suggestedprofile .userinfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    text-align: left;
+}
+.main .suggestedprofiles .suggestedprofile .userinfo .username {
+    font-size: 12px;
+    margin: 0;
+}
+.main .suggestedprofiles .suggestedprofile .userinfo .fullname {
+    letter-spacing: .2px;
+    font-size: 12px;
+    margin: 0;
+    text-transform: capitalize; 
+    color: rgb( 142, 142, 142);
+}
+.main .suggestedprofiles .suggestedprofile .followbtns {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+.main .suggestedprofiles .suggestedprofile .followbtns button {
+    background-color: var(--gray-background);
+    border: none;
+    cursor: pointer;
+    text-transform: capitalize; 
+    font-size: 12px;
+    font-weight: 600;
+}
+.main .suggestedprofiles .suggestedprofile .followbtns .follow {
+    color: var(--blue-light);
+}
+.main .suggestedprofiles .suggestedprofile .following {
+    color: rgb(38, 38, 38);
+}
+.overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items:center;
+    background-color: var(--white);
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 15px;
+    z-index: 1000;
+    position: fixed;
+}
+
+ .overlay .profileimg img {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+ .overlay div {
+    width: 100%;
+    border-bottom:solid 1px  var(--gray-primary);
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 14px;
+    color: rgb(38, 38, 38);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ .overlay div:last-of-type {
+    border: none;
+    padding: 0;
+}
+.overlay div .unfollow {
+    color: rgb(237,73,86);
+    font-weight: 600;
+    background-color: var(--white);
+    border: none;
+}
+.overlay div .cancel {
+    color: rgb(38, 38, 38);
+    background-color: var(--white);
+    padding: 16px;
+    border: none;
+    
+}
+
+
+@media (max-width:900px) {
+    
+}
+@media (min-width:540px){
+    .main {
+        max-width: 540px;
+    }
+}
+@media (max-width:520px) {
+    .main .timeLine {
+        max-width: 90%;
+    }
+    
+}
+@media (min-width:668px){
+    .main {
+        max-width: 668px;
+    }
+}
+@media (min-width:1024px){
+    .main {
+        max-width: 1024px;
+    }
+}
+@media (max-width:1000px){
+    .main {
+        display: block;
+    
+    }
+    .main .sidepar {
+        display: none;
+    }
+    .main .timeLine {
+        margin: 0 auto;
+    }
+}
+@media (min-width:1280px){
+    .main {
+        max-width:1280px
+    }
+}
+@media (min-width:1536px){
+    .main {
+        max-width:1536px
+    }
+}
+
