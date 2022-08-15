@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/React-Instagram-Clone/static/css/main.ff945f86.css",
-    "main.js": "/React-Instagram-Clone/static/js/main.bd7ec36c.js",
+    "main.js": "/React-Instagram-Clone/static/js/main.5a3288b6.js",
     "static/css/490.958cfe46.chunk.css": "/React-Instagram-Clone/static/css/490.958cfe46.chunk.css",
-    "static/js/490.7e7b33de.chunk.js": "/React-Instagram-Clone/static/js/490.7e7b33de.chunk.js",
+    "static/js/490.c28e24a1.chunk.js": "/React-Instagram-Clone/static/js/490.c28e24a1.chunk.js",
     "static/css/542.958cfe46.chunk.css": "/React-Instagram-Clone/static/css/542.958cfe46.chunk.css",
-    "static/js/542.013a7478.chunk.js": "/React-Instagram-Clone/static/js/542.013a7478.chunk.js",
+    "static/js/542.a6f0e86e.chunk.js": "/React-Instagram-Clone/static/js/542.a6f0e86e.chunk.js",
     "static/css/326.0b181f11.chunk.css": "/React-Instagram-Clone/static/css/326.0b181f11.chunk.css",
     "static/js/326.2285e3ce.chunk.js": "/React-Instagram-Clone/static/js/326.2285e3ce.chunk.js",
     "static/css/7.3d48401d.chunk.css": "/React-Instagram-Clone/static/css/7.3d48401d.chunk.css",
     "static/js/7.78333648.chunk.js": "/React-Instagram-Clone/static/js/7.78333648.chunk.js",
     "index.html": "/React-Instagram-Clone/index.html",
     "main.ff945f86.css.map": "/React-Instagram-Clone/static/css/main.ff945f86.css.map",
-    "main.bd7ec36c.js.map": "/React-Instagram-Clone/static/js/main.bd7ec36c.js.map",
+    "main.5a3288b6.js.map": "/React-Instagram-Clone/static/js/main.5a3288b6.js.map",
     "490.958cfe46.chunk.css.map": "/React-Instagram-Clone/static/css/490.958cfe46.chunk.css.map",
-    "490.7e7b33de.chunk.js.map": "/React-Instagram-Clone/static/js/490.7e7b33de.chunk.js.map",
+    "490.c28e24a1.chunk.js.map": "/React-Instagram-Clone/static/js/490.c28e24a1.chunk.js.map",
     "542.958cfe46.chunk.css.map": "/React-Instagram-Clone/static/css/542.958cfe46.chunk.css.map",
-    "542.013a7478.chunk.js.map": "/React-Instagram-Clone/static/js/542.013a7478.chunk.js.map",
+    "542.a6f0e86e.chunk.js.map": "/React-Instagram-Clone/static/js/542.a6f0e86e.chunk.js.map",
     "326.0b181f11.chunk.css.map": "/React-Instagram-Clone/static/css/326.0b181f11.chunk.css.map",
     "326.2285e3ce.chunk.js.map": "/React-Instagram-Clone/static/js/326.2285e3ce.chunk.js.map",
     "7.3d48401d.chunk.css.map": "/React-Instagram-Clone/static/css/7.3d48401d.chunk.css.map",
@@ -24,6 +24,6 @@
   },
   "entrypoints": [
     "static/css/main.ff945f86.css",
-    "static/js/main.bd7ec36c.js"
+    "static/js/main.5a3288b6.js"
   ]
 }
