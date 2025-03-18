@@ -23,7 +23,7 @@ function Header({userId,username,fullName,following,followers,photos,docId}){
                 setIsFollowing(true);
             }
         }
-    },[ userId])
+    },[activeUserData?.following, isTheActiveUserProfile, userId])
 
 
     React.useEffect(()=>{

@@ -9,7 +9,8 @@ function Login(){
 
     const navigate = useNavigate();
     const {auth} = React.useContext(FirebaseContext);
-    
+    const user = useAuthUserListener();
+    console.log(user)
     const [formData ,setFormData] =React.useState({email:"",password:"",error:""})
 
     const isInvalid = formData.email === "" || formData.password === ""||formData.password.length<8;
@@ -23,8 +24,6 @@ function Login(){
 
         try{
             await signInWithEmailAndPassword (auth,formData.email, formData.password).then((userCredential) => {
-                //navigate(PATHS.HOME);
-                window.location.reload();
             })
             .catch((e) => {
                 setFormData({email:"",password:"",error:e.message.replace("Firebase: Error ","").replace("auth/","")})
@@ -35,7 +34,13 @@ function Login(){
             
         }
     }
-    useAuthUserListener();
+
+    React.useEffect(() => {
+        if (user) {
+            navigate(PATHS.HOME, { replace: true });
+        }
+    }, [user, navigate]);
+
     React.useEffect(() => {
         document.title = 'Login - Instagram';
     }, []);

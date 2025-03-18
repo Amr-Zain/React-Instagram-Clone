@@ -1,11 +1,10 @@
 import React from "react";
 import {triggleLike}  from '../../services/firebase'
+import { TOGGLE_LIKE } from "../../constants/postActions";
 function Activites({imgDocId,userId ,liked,setLiked,commentIcomClick}){
-    //console.log('Activites')
     const likeHandler = async()=>{
-        
             triggleLike(imgDocId,userId,liked)
-            setLiked({type:'liked',value:liked?-1:1})
+            setLiked({type:TOGGLE_LIKE,value:liked?-1:1})
     }
     return (
             <div className="activites"> {

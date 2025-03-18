@@ -1,19 +1,18 @@
 import React from "react";
 import { createComment , createReply}  from '../../services/firebase'
+import { SET_NEW_COMMENT, UPDATE_COMMENTS_COUNT } from "../../constants/postActions";
 
 function AddComment({loggedinUsername,imgDocId,inputRef,newComment,dispatcher,commentType}){
-    //console.log('addComment');
     const PostComment = async (e)=>{
         e.preventDefault();
 
         if(commentType.isReply){
-            //console.log(commentType.replyDocId);
             await createReply(loggedinUsername,newComment,commentType.replyDocId);
         }else {
             await createComment(loggedinUsername,newComment,imgDocId);
         }
-        dispatcher({type:'commentsCount',value:1})
-        dispatcher({type:'newComment',value:""});
+        dispatcher({type:UPDATE_COMMENTS_COUNT, value:1})
+        dispatcher({type:SET_NEW_COMMENT, value:""});
     }
     return (
         <form

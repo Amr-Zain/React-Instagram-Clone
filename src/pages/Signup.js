@@ -6,11 +6,12 @@ import * as PATHS from "../constants/Routes"
 import { doesUsernameExist , updateFollowers } from '../services/firebase';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { collection, addDoc } from "firebase/firestore"; 
+import useAuthUserListener from "../hooks/useAthUserListener";
 function Signup(){
 
     const navigate = useNavigate();
     const { auth,FieldValue } = React.useContext(FirebaseContext);
-
+    const user = useAuthUserListener();
     const [formData ,setFormData] =React.useState({email:"",password:"",userName:"",fullName:"",error:""})
 
     const isInvalid = formData.email === "" || formData.password === ""||formData.password.length<8
@@ -23,17 +24,10 @@ function Signup(){
     async function submitHandler(event){
         event.preventDefault();
         const isExist = await doesUsernameExist(formData.userName);
-        //console.log("idExist",isExist);
         if(!isExist){
             try{
 
                     const createdUserResult = await createUserWithEmailAndPassword (auth,formData.email, formData.password);
-                    //console.log(createdUserResult)
-        
-                // authentication
-                // -> emailAddress & password 
-        
-                // firebase user collection (create a document)
                 const usersRef = collection(FieldValue, 'users');
                 await addDoc(usersRef, {
                     userId: createdUserResult.user.uid,
@@ -46,9 +40,6 @@ function Signup(){
                     dateCreated: Date.now()
                 })
                 await updateFollowers('Z4UuSMEn71luvi49bcOr',createdUserResult.user.uid,false);
-                
-                //navigate(PATHS.HOME);
-                window.location.reload();
             }catch(e){
                 setFormData({email:"",password:"",userName:"",fullName:"",error:e.message.replace("Firebase: Error ","").replace("auth/","")})
             }
@@ -57,6 +48,11 @@ function Signup(){
                             error:'That username is already taken, please try another.'}})
         }
     }
+     React.useEffect(() => {
+        if (user) {
+            navigate(PATHS.HOME, { replace: true });
+        }
+    }, [user, navigate]);
     React.useEffect(() => {
         document.title = 'Signup - Instagram';
     }, []);

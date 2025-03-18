@@ -4,7 +4,6 @@ import { updateFollowing , updateFollowers } from '../../services/firebase'
 import React from "react";
 import Unfollow from "../Unfollow";
 function Header({username,imgUserDocId,imgUserId,userId,userDocId}){
-    //console.log("header")
     const [overlayState,setOverlayState] = React.useState(false);
     async function unfollowHandler(){
         setOverlayState(false);

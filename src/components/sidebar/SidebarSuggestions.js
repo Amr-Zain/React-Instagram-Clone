@@ -15,7 +15,7 @@ function SidebarSuggestions(props){
         }
         if(props?.userId) getPorfiles()
 
-    },[props?.userId])
+    },[props?.following, props?.userId])
     React.useEffect(()=>{
         const listener =()=>{
             if(window.innerWidth<1024){

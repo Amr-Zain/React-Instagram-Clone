@@ -9,23 +9,23 @@ import Activites from "./Activites";
 import useDateCreated from '../../hooks/useDateCreated';
 import React from 'react';
 import ReactDOM from 'react-dom'
+import { SET_COMMENT_TYPE, VIEW_COMMENTS } from '../../constants/postActions';
 
 const PostWithComments = ({photo,userData,dispatcher,comments,liked,likesNumberState,newComment,commentType,inputRef})=>{
-    //console.log('PostWithComments');
     const dateCreated = useDateCreated(photo.dateCreated);
     const Comments = comments.map((comment)=>{
-        return <Comment key ={comment.docId} {...comment}inputRef={inputRef} dispatcher={dispatcher} 
+        return <Comment key ={comment.docId} {...comment} inputRef={inputRef} dispatcher={dispatcher} 
                 activeUserUsername={userData?.username}activeUserUserId={userData?.userId} imgDocId={photo.docId}/>})
 
     const commentIcomClick = React.useCallback(()=>{
-        dispatcher({type:'commentType',value:{isReply:false,replyDocId:''}})
+        dispatcher({type: SET_COMMENT_TYPE,value:{isReply:false,replyDocId:''}})
         inputRef.current.focus();
-    },[])
+    },[dispatcher, inputRef])
 
     return(ReactDOM.createPortal(
     <>
         <div className="post-cotainer"  >
-        <svg onClick={()=>{dispatcher({type:'viewComments',value:false})}} style={{marginBottom:'.5rem'}} aria-label="Close" className="fg7vo5n6 lrzqjn8y" color="#ffffff" fill="#ffffff" height="18" 
+        <svg onClick={()=>{dispatcher({type: VIEW_COMMENTS,value:false})}} style={{marginBottom:'.5rem'}} aria-label="Close" className="fg7vo5n6 lrzqjn8y" color="#ffffff" fill="#ffffff" height="18" 
         role="img" viewBox="0 0 48 48" width="18"><title>Close</title>
         <path clipRule="evenodd" d="M41.8 9.8L27.5 24l14.2 14.2c.6.6.6 1.5 0 2.1l-1.4 
         1.4c-.6.6-1.5.6-2.1 0L24 27.5 9.8 41.8c-.6.6-1.5.6-2.1 0l-1.4-1.4c-.6-.6-.6-1.5 0-2.1L20.5 
@@ -76,26 +76,26 @@ const PostWithComments = ({photo,userData,dispatcher,comments,liked,likesNumberS
                         </div>
                     </div>
                     <footer className="footer">
-                                        <Activites didLike ={photo?.didLike} 
-                                            imgDocId ={photo?.docId}
-                                            userId ={userData?.userId} liked={liked} setLiked ={dispatcher}
-                                            commentIcomClick={commentIcomClick}
-                                            />
-                                        <PostInfo username ={photo.username} caption={null}
-                                                    commentsLen={0} setViewComments={null}
-                                                    dateCreated={photo.dateCreated} likesNumberState={likesNumberState}
-                                                    userComments ={null}
-                                                    />  
-                                        <AddComment loggedinUsername={userData?.username} imgDocId = {photo.docId}
-                                            newComment={newComment} dispatcher={dispatcher} inputRef={inputRef}
-                                            commentType={commentType}/>
+                        <Activites didLike ={photo?.didLike} 
+                            imgDocId ={photo?.docId}
+                            userId ={userData?.userId} liked={liked} setLiked ={dispatcher}
+                            commentIcomClick={commentIcomClick}
+                            />
+                        <PostInfo username ={photo.username} caption={null}
+                                    commentsLen={0} setViewComments={null}
+                                    dateCreated={photo.dateCreated} likesNumberState={likesNumberState}
+                                    userComments ={null}
+                                    />  
+                        <AddComment loggedinUsername={userData?.username} imgDocId = {photo.docId}
+                            newComment={newComment} dispatcher={dispatcher} inputRef={inputRef}
+                            commentType={commentType}/>
                     </footer>
                 </div>
 
         </div>
 
         </div>
-        <div onClick={()=>{dispatcher({type:'viewComments',value:false})}} className="over" style={{
+        <div onClick={()=>{dispatcher({type: VIEW_COMMENTS, value:false})}} className="over" style={{
                     position: 'fixed',
                     left: '0',
                     top: '0',

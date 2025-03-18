@@ -1,48 +1,54 @@
 import React from "react";
-function useDateCreated(dateCreated){
-    const [createdText,setCeatedText] = React.useState();
-        React.useEffect(()=>{
-            function date(){
-                const date = new Date();
-                const createdAt =new Date(dateCreated);
-                let period = (date.getTime() - createdAt.getTime())/1000;
-                if(period<60){
-                    setCeatedText('Just NOW');
-                    return;
+
+const intervals = {
+    year: 31536000,
+    month: 2592000,
+    day: 86400,
+    hour: 3600,
+    minute: 60
+};
+function useDateCreated(dateCreated) {
+    const [createdText, setCreatedText] = React.useState("Just now");
+    
+    React.useEffect(() => {
+        if (!dateCreated) return;
+
+    const calculateTimeDifference = () => {
+        const now = new Date();
+        const createdAt = new Date(dateCreated);
+        let period = Math.floor((now - createdAt) / 1000); 
+
+        if (period < 10) {
+            return "Just now";
+        }
+        if (period < 60) {
+            return `${period} seconds ago`;
+        }
+
+        let counter;
+        for (const [unit, seconds] of Object.entries(intervals)) {
+            counter = Math.floor(period / seconds);
+            console.log(counter,unit)
+            if (counter > 0) {
+                if (counter === 1) {
+                    return `${counter} ${unit} ago`;
                 }
-                period /=60;
-                if(Math.floor(period) >= 1 && period < 60){
-                    setCeatedText( `${Math.floor(period)} ${Math.floor(period) === 1 ? "minute":"minuites"}`);
-                    return;
-                }
-                
-                period /=60;
-                if(Math.floor(period) >=1 && period< 24){
-                    setCeatedText(`${Math.floor(period)} ${Math.floor(period) === 1 ? "hour":"hours"}`);
-                    return;
-                }
-                period /=24;
-                
-                if(Math.floor(period) >=1 && period< 30){
-                    setCeatedText(`${Math.floor(period)} ${Math.floor(period) === 1 ? "Day":"Days"}`);
-                    return;
-                }
-                period /=30;
-                if(Math.floor(period) >=1 && period<12){
-                    setCeatedText(`${Math.floor(period)} ${Math.floor(period) === 1 ? "month":"months"}`);
-                    return;
-                }
-                period /=12;
-                if(period >=1){
-                    period /=30;
-                    setCeatedText(`${Math.floor(period)} ${Math.floor(period) === 1 ? "year":"years"}`);
-                    return;
-                }
-                
+                return `${counter} ${unit}s ago`;
             }
-            date();
-        },[]) 
+            period %= seconds;
+        }
+    };
+
+    setCreatedText(calculateTimeDifference());
         
-        return createdText;
+    const interval = setInterval(() => {
+        setCreatedText(calculateTimeDifference());
+    }, 60000);
+
+    return () => clearInterval(interval);
+    }, [dateCreated]);
+
+    return createdText;
 }
-export default useDateCreated
+
+export default useDateCreated;

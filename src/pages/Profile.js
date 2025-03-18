@@ -27,7 +27,7 @@ function Profile(){
         if(username){
             get();
         }
-    },[username])
+    },[navigate, username])
     
     
     

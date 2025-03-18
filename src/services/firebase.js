@@ -1,7 +1,6 @@
 import { FieldValue } from '../lib/firebase';
 import { collection, getDocs,query,where,limit,doc,updateDoc,
-    arrayUnion, arrayRemove,addDoc,getDoc ,increment,deleteDoc} from 'firebase/firestore';
-import { async } from '@firebase/util';
+    arrayUnion, arrayRemove,addDoc ,increment,deleteDoc} from 'firebase/firestore';
 
 
 

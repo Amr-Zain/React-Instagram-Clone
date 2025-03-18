@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from 'react-router-dom'
 import useDateCreated from "../../hooks/useDateCreated";
+import { VIEW_COMMENTS } from "../../constants/postActions";
 
 
 function PostInfo({username,caption,commentsLen,setViewComments,dateCreated,likesNumberState,userComments,userLikedIds}){
@@ -22,7 +23,7 @@ function PostInfo({username,caption,commentsLen,setViewComments,dateCreated,like
             }
             {
             commentsLen > 1 &&
-            <div className="view-comments" onClick={()=>{setViewComments(({type:'viewComments',value:true}))}}>
+            <div className="view-comments" onClick={()=>{setViewComments(({type: VIEW_COMMENTS,value:true}))}}>
                 {<p>View all {commentsLen} comments</p>}
             </div>
             }
