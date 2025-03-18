@@ -21,7 +21,7 @@ function Header(){
                 <div className="header-container">
                     <div className="logo ">
                             <Link  to={PATHS.HOME} >
-                                <img style={{width: '100%'}}  className="insta-logo" src="/images/logo.png" alt="Instagram" />
+                                <img style={{width: '100%'}}  className="insta-logo" src="https://raw.githubusercontent.com/Amr-Zain/React-Instagram-Clone/master/public/images/logo.png" alt="Instagram" />
                             </Link>
                     </div>
                     <div className="user">
@@ -48,7 +48,7 @@ function Header(){
                                 }}
                             >
                                 
-                                <img src="/images/logout.svg" alt="logout"/>    
+                                <img src="https://raw.githubusercontent.com/Amr-Zain/React-Instagram-Clone/master/public/images/logout.svg" alt="logout"/>    
                             </button>
 
                             

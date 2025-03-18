@@ -198,19 +198,7 @@
 .delete div .delete-btn,.delete div .report-btn {
     color: rgb(var(--ig-red));
 }
-/*
-.delete div:last-of-type {
-    border: none;
-    padding-bottom: 0;
-    background-color: var(--white);
 
-}
-.delete div .delete-btn ,.delete div .report-btn {
-    color: rgb(237,73,86);
-    font-weight: 600;
-    background-color: var(--white);
-    border: none;
-} */
 .user-comment {
     display: flex;
     align-items: flex-start;
@@ -297,7 +285,6 @@
 .comment-replies {
     margin-left: 2.8rem;
 }
-/****************************/
 .activites {
     font-size: 1.5rem;
     display: flex;
