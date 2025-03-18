@@ -14,9 +14,9 @@ function Header({username,imgUserDocId,imgUserId,userId,userDocId}){
     return (
         <div className="header">
             <Link className="user-info" to ={`${PROFILE}/${username}`}>
-                <img src={`./images/avatars/${username}.jpg`} alt={username} 
+                <img src={`https://raw.githubusercontent.com/Amr-Zain/React-Instagram-Clone/master/public/images/avatars/${username}.jpg`} alt={username} 
                 onError={(e)=>{
-                    e.target.src ="./images/avatars/default.png"
+                    e.target.src ="https://raw.githubusercontent.com/Amr-Zain/React-Instagram-Clone/master/public/images/avatars/default.png"
                 }}/>
                 <h3 className="username">{username}</h3>
             </Link>

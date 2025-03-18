@@ -47,11 +47,11 @@ function Login(){
 
     return(<div className="container">
             <div className="img-container">
-                <img src="/images/iphone-with-profile.jpg" alt="iPhone with Instagram app" />
+                <img src="https://raw.githubusercontent.com/Amr-Zain/React-Instagram-Clone/master/public/images/iphone-with-profile.jpg" alt="iPhone with Instagram app" />
             </div>
             <div className="container-sec">
                 <div className="form-container">
-                    <img className="logo" src="/images/logo.png" alt="logo"/>
+                    <img className="logo" src="https://raw.githubusercontent.com/Amr-Zain/React-Instagram-Clone/master/public/images/logo.png" alt="logo"/>
                     
                     {formData.error && <p className="error">{formData.error}</p>}
                     

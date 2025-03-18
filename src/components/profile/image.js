@@ -21,7 +21,7 @@ function Image({ dicId, likes, comments, imageSrc }) {
                         <span>{comments}</span>
                     </div>
                 </div>
-                <img src={imageSrc} alt='userimg'/>
+                <img src={`https://raw.githubusercontent.com/Amr-Zain/React-Instagram-Clone/master/public/${imageSrc}`} alt='userimg'/>
             </div>
     </div> );
 }

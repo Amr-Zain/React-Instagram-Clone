@@ -34,9 +34,9 @@ function SuggestedProfile({activeUserDocId,activeUserId,fullName,suggDocId,suggU
     return (<div className="suggestedprofile">
                 <div className="info">
                     <Link className="profileimg" to ={`${PATHS.PROFILE}/${username}`}>
-                        <img className="img" src={`./images/avatars/${username}.jpg`} alt={username}
+                        <img className="img" src={`https://raw.githubusercontent.com/Amr-Zain/React-Instagram-Clone/master/public/images/avatars/${username}.jpg`} alt={username}
                         onError={(e)=>{
-                            e.target.src =`/images/avatars/default.png`;
+                            e.target.src =`https://raw.githubusercontent.com/Amr-Zain/React-Instagram-Clone/master/public/images/avatars/default.png`;
                         }}
                         />
                     </Link>

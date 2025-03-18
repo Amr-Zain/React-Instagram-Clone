@@ -10,10 +10,10 @@ const SidebarUser=(props)=>{
                 <div className="user">
                 <Link className="profileimg" to={`${PATHS.PROFILE}/${props.username}`}>
                 <img
-                    src={`/images/avatars/${props.username}.jpg`}/*change to  */
+                    src={`https://raw.githubusercontent.com/Amr-Zain/React-Instagram-Clone/master/public/images/avatars/${props.username}.jpg`}/*change to  */
                     alt={`${props?.username} profile`}
                     onError={(e) => {
-                    e.target.src = `/images/avatars/default.png`;
+                    e.target.src = `https://raw.githubusercontent.com/Amr-Zain/React-Instagram-Clone/master/public/images/avatars/default.png`;
                     }}
                 />
                 </Link>

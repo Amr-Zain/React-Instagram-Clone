@@ -60,10 +60,10 @@ function Header({userId,username,fullName,following,followers,photos,docId}){
             <div className="main-info">
                 <div className="profile-img">
                     <img 
-                        src={`/images/avatars/${username}.jpg`}
+                        src={`https://raw.githubusercontent.com/Amr-Zain/React-Instagram-Clone/master/public/images/avatars/${username}.jpg`}
                         alt='profileImg'
                         onError={(e) => {
-                            e.target.src = `/images/avatars/default.png`;
+                            e.target.src = `https://raw.githubusercontent.com/Amr-Zain/React-Instagram-Clone/master/public/images/avatars/default.png`;
                             }}
                     />
                 </div>

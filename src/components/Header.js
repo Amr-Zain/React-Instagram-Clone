@@ -55,10 +55,10 @@ function Header(){
                                         <div className="user-profile">
                                             <Link to={`/profile/${userData?.username}`}>
                                                 <img
-                                                    src={`/images/avatars/${userData?.username}.jpg`}
+                                                    src={`https://raw.githubusercontent.com/Amr-Zain/React-Instagram-Clone/master/public/images/avatars/${userData?.username}.jpg`}
                                                     alt={`${userData?.username}`}
                                                     onError={(e) => {
-                                                    e.target.src = `/images/avatars/default.png`;
+                                                    e.target.src = `https://raw.githubusercontent.com/Amr-Zain/React-Instagram-Clone/master/public/images/avatars/default.png`;
                                                     }}
                                                 />
                                             </Link>
